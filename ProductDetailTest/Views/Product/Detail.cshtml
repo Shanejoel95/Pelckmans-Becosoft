@@ -1,0 +1,148 @@
+@using System.Globalization
+@model BecoSoftAssignment.Models.ProductDetailViewModel
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <!-- LEFT COLUMN: Gallery -->
+    <div class="col-lg-7">
+        <div class="product-gallery d-flex">
+            <!-- Thumbnails (left) -->
+            <div class="thumbs-wrap">
+                <div id="thumbList" class="thumbs">
+                    @for (var i = 0; i < Model.ImageUrls.Count; i++)
+                    {
+                        var src = Model.ImageUrls[i];
+                        var isActive = i == 0 ? "active" : "";
+                        <img src="@src"
+                             class="thumb @isActive"
+                             data-index="@i"
+                             alt="Thumbnail @(i + 1)" />
+                    }
+                </div>
+            </div>
+
+            <!-- Hero + arrows -->
+            <div class="hero-wrap position-relative">
+                <button class="nav-arrow prev" type="button" aria-label="Previous image">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <img id="heroImage" src="@Model.ImageUrls[0]" alt="@Model.Title" class="img-fluid hero-img" />
+
+                <button class="nav-arrow next" type="button" aria-label="Next image">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- NOTE then DOTS (both under the hero, left-aligned with the hero image) -->
+        <div class="pager-block">
+            <small class="text-muted img-note">Images are as true to life as possible</small>
+            <div class="pager-dots">
+                @for (var i = 0; i < Model.ImageUrls.Count; i++)
+                {
+                    var active = i == 0 ? "active" : "";
+                    <span class="dot @active" data-index="@i"></span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Product Info -->
+    <div class="col-lg-5">
+        <h2 class="mb-2">@Model.Title</h2>
+
+        <!-- Price area (strike + current) -->
+        <div class="mb-3 product-price">
+            @if (Model.DiscountedPrice.HasValue)
+            {
+                <span class="product-old-price" style="text-decoration: line-through;">
+                    @Model.Price.ToString("C")
+                </span>
+                <span class="product-discount">&nbsp; @Model.DiscountedPrice.Value.ToString("C")</span>
+            }
+            else
+            {
+                <span class="product-discount">@Model.Price.ToString("C")</span>
+            }
+        </div>
+
+        <!-- Stock -->
+        <p class="@(Model.InStock ? "text-success" : "text-danger")">
+            @(Model.InStock ? "In Stock" : "Out of Stock")
+        </p>
+
+        <!-- Primary CTAs (pills) -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <button id="btnAddToCart" type="button" class="btn btn-danger btn-pill"
+                    data-price="@((Model.DiscountedPrice ?? Model.Price).ToString(CultureInfo.InvariantCulture))">
+                <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+            </button>
+
+            <button type="button" class="btn btn-warning ml-2 btn-pill">
+                <i class="fas fa-heart mr-2"></i> Add to Wishlist
+            </button>
+        </div>
+
+        <!-- See all promotions -->
+        <div class="mb-3">
+            <a href="javascript:void(0)" class="btn btn-outline-danger btn-sm rounded-pill px-3">
+                See all our promotions
+            </a>
+        </div>
+
+        <!-- AVAILABILITY -->
+        <div class="availability mb-4">
+            <div class="avail-row">
+                <div class="label">Online Availability</div>
+                <div class="value">@(Model.InStock ? "In stock" : "Out of stock")</div>
+                <div></div>
+            </div>
+
+            <div class="avail-row">
+                <div class="label">Pick up in one of our stores</div>
+                <div class="text-muted small">Choose your store</div>
+                <div class="text-right text-muted"><i class="fas fa-angle-down"></i></div>
+            </div>
+
+            <!-- Turnhout -->
+            <div class="avail-row">
+                <div class="store-line">
+                    <div> <strong class="store-name">Turnhout</strong> </div>
+                    <br />
+                    <span class="status text-success">In stock and available immediately</span>
+                </div>
+                <div></div>
+                <div>
+                    <a class="btn btn-outline-danger btn-slim pickup-btn" href="javascript:void(0)">
+                        Order for pickup in Turnhout
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lommel -->
+            <div class="avail-row">
+                <div class="store-line">
+                    <strong class="store-name">Lommel</strong>
+                    <br />
+                    <span class="status text-success">In stock and available immediately</span>
+                </div>
+                <div></div>
+                <div>
+                    <a class="btn btn-outline-danger btn-slim pickup-btn" href="javascript:void(0)">
+                        Order for pickup in Lommel
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- END availability -->
+    </div>
+</div>
+
+<hr />
+@Html.Partial("_TabsPartial", Model)
+<hr />
+@Html.Partial("_RelatedProductsPartial", Model.RelatedProducts)

@@ -1,0 +1,9 @@
+@model List<BecoSoftAssignment.Models.RelatedProductViewModel>
+
+<h3>Related Products</h3>
+<div class="row">
+    @foreach (var product in Model)
+    {
+        @Html.Partial("_ProductCardPartial", product)
+    }
+</div>

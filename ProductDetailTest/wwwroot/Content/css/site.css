@@ -1,0 +1,4 @@
+.thumb { margin-right: 5px; border: 2px solid transparent; }
+.thumb:hover { border-color: #ffc107; }
+.nav-tabs .nav-link.active { background-color: #ffc107; color: #000; }
+.toast { position: fixed; top: 20px; right: 20px; min-width: 250px; padding: 10px; border-radius: 5px; background: #fff; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); z-index: 9999; }

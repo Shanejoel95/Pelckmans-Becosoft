@@ -1,0 +1,23 @@
+@model BecoSoftAssignment.Models.RelatedProductViewModel
+
+<div class="col-md-3 text-center mb-3">
+    <div class="card">
+        <img src="@Model.ImageUrl" class="card-img-top" />
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            @if (Model.DiscountedPrice.HasValue)
+            {
+                <p>
+                        <span style="font-weight:bold; color:red; text-decoration: line-through;">
+                            @Model.Price.ToString("C")
+                        </span>
+                    <strong>  &nbsp; @Model.DiscountedPrice.Value.ToString("C")</strong>
+                </p>
+            }
+            else
+            {
+                <p>@Model.Price.ToString("C")</p>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+$primary-color: #ffc107;
+
+.thumb {
+    margin-right: 5px;
+    border: 2px solid transparent;
+
+    &:hover {
+        border-color: $primary-color;
+    }
+}
+
+.nav-tabs .nav-link.active {
+    background-color: $primary-color;
+    color: #000;
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.product-old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+}
+
+.product-discount {
+    color: #dc3545; /* Bootstrap red */
+    font-weight: bold;
+}
+
+.thumb {
+    margin-right: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.thumb:hover {
+    border-color: #ffc107; /* Bootstrap warning yellow */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.related-products .card {
+    border: none;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.related-products .card:hover {
+    transform: scale(1.03);
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+}

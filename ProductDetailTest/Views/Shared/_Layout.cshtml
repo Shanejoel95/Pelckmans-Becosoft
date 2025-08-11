@@ -1,0 +1,96 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - Product Detail</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Custom CSS (wwwroot/css/site.css) -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="site-header">
+        <!-- Top yellow bar -->
+        <div class="bg-warning">
+            <div class="container d-flex align-items-center justify-content-between py-3">
+                <!-- Logo -->
+                <a class="d-flex align-items-center text-decoration-none" href="@Url.Action("Detail", "Product")">
+                    <img src="~/Content/images/logo.jpg" alt="Pelckmans" class="mr-3" style="height:40px;" />
+                </a>
+
+                <!-- Center search -->
+                <form class="d-none d-md-flex align-items-center flex-grow-1 mx-4" role="search" action="#" method="get" style="max-width:640px;">
+                    <div class="w-100 d-flex align-items-center bg-white rounded px-3 py-2">
+                        <input class="form-control border-0 shadow-none" type="search" name="q" placeholder="Search..." aria-label="Search" />
+                        <button class="btn btn-link text-muted" type="submit" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Right auth links -->
+                <nav class="d-none d-md-flex align-items-center">
+                    <a href="#" class="text-dark small">Login</a>
+                    <span class="mx-2 text-dark">|</span>
+                    <a href="#" class="text-dark small">Register</a>
+                    <span class="mx-2 text-dark">|</span>
+                    <a href="#" class="text-dark small">My Pelckmans</a>
+                    <span class="mx-2 text-dark">|</span>
+                    <a href="#" class="text-dark small">Wishlist</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Dark nav bar -->
+        <div class="navbar-secondary" style="background:#111827;">
+            <div class="container d-flex align-items-center justify-content-between py-2">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white-50 active" href="#">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">DEPARTMENTS <i class="fas fa-chevron-down ml-1 small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">PROMOTIONS</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">VACANCIES</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">STORES</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">BLOG</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">INFO <i class="fas fa-chevron-down ml-1 small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">CONTACT</a></li>
+                </ul>
+
+                <!-- Cart summary (uses your existing IDs) -->
+                <div class="d-flex align-items-center text-white font-weight-bold">
+                    <div class="position-relative mr-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute badge badge-danger" id="cartCount" style="top:-8px;right:-10px;">0</span>
+                    </div>
+                    <span class="mr-2">Items</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-dark text-white p-3 text-center">
+        &copy; @DateTime.Now.Year Pelckmans - All Rights Reserved
+    </footer>
+
+    <!-- jQuery (load first) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Toast plugin (wwwroot/js/toastMessage.js) -->
+    <script src="~/js/toastMessage.js" asp-append-version="true"></script>
+    <!-- Your app logic (wwwroot/js/site.js) -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
