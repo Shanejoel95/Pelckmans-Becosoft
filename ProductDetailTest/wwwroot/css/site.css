@@ -306,7 +306,7 @@ body {
 .pager-block {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* align with hero’s left edge */
+    align-items: center; /* align with hero’s left edge */
     margin-top: .5rem;
     gap: .35rem;
     margin-left: calc(90px + 16px); /* thumbs width + gallery gap */

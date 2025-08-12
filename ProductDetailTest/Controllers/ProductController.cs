@@ -33,10 +33,10 @@ namespace BecoSoftAssignment.Controllers
                 },
                 RelatedProducts = new List<RelatedProductViewModel>
                 {
-                    new RelatedProductViewModel { Title = "School Backpack - Blue", ImageUrl = "/Content/images/Bag_image_01.jpg", Price = 49.99m },
-                    new RelatedProductViewModel { Title = "Travel Backpack - Black", ImageUrl = "/Content/images/Bag_image_01.jpg", Price = 69.99m, DiscountedPrice = 54.99m },
-                    new RelatedProductViewModel { Title = "Casual Daypack", ImageUrl = "/Content/images/Bag_image_01.jpg", Price = 39.99m },
-                    new RelatedProductViewModel { Title = "Laptop Backpack", ImageUrl = "/Content/images/Bag_image_01.jpg", Price = 89.99m, DiscountedPrice = 79.99m }
+                    new RelatedProductViewModel { Title = "School Backpack - Blue", ImageUrl = "/Content/images/Blue_backpack.jpg", Price = 49.99m },
+                    new RelatedProductViewModel { Title = "Travel Backpack - Black", ImageUrl = "/Content/images/Travel_backpack_black.jpg", Price = 69.99m, DiscountedPrice = 54.99m },
+                    new RelatedProductViewModel { Title = "Casual Daypack", ImageUrl = "/Content/images/Casual_daypack.jpg", Price = 39.99m },
+                    new RelatedProductViewModel { Title = "Laptop Backpack", ImageUrl = "/Content/images/Laptop_backpack.jpg", Price = 89.99m, DiscountedPrice = 79.99m }
                 }
             };
 
