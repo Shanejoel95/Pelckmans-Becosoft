@@ -1,4 +1,4 @@
-﻿// ===== Variables =====
+﻿//  Variables 
 $brand-yellow: #ffc109;
 $border-light: #eee;
 $shadow: 0 2px 8px rgba(0,0,0,.15);
@@ -8,14 +8,14 @@ $thumb-height: 76px;
 $gap: 16px;
 $bp-lg: 991.98px;
 
-// ===== Mixins =====
+//  Mixins 
 @mixin respond-to($max) {
     @media (max-width: $max) {
         @content;
     }
 }
 
-// ===== Base =====
+//  Base 
 html {
     font-size: 14px;
 }
@@ -25,7 +25,6 @@ html {
         font-size: 16px;
     }
 }
-
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,
@@ -43,14 +42,14 @@ body {
     margin-bottom: 60px;
 }
 
-// ===== Nav / Tabs =====
+//  Nav / Tabs 
 .nav-tabs .nav-link.active,
 .nav-pills .nav-link.active {
     background-color: $brand-yellow !important;
     color: #000 !important;
 }
 
-// ===== Toasts =====
+//  Toasts 
 #toast-container {
     position: fixed;
     top: 20px;
@@ -107,7 +106,7 @@ body {
     }
 }
 
-// ===== Product gallery (thumbs LEFT + hero with arrows) =====
+//  Product gallery 
 .product-gallery {
     display: flex;
     gap: $gap;
@@ -212,7 +211,7 @@ body {
     }
 }
 
-// ===== Product text styles =====
+//  Product text styles 
 .product-old-price {
     color: crimson;
     font-weight: bold;
@@ -227,7 +226,7 @@ body {
     font-weight: bold;
 }
 
-// ===== Cart header (ids used by JS) =====
+//  Cart header 
 #cartTotal {
     min-width: 80px;
     display: inline-block;
@@ -239,7 +238,6 @@ body {
 .site-header .topbar {
     background: #ffc107;
 }
-/* using Bootstrap warning, matches screenshot */
 
 .brand-logo {
     height: 40px;
@@ -280,7 +278,7 @@ body {
 
 /* Dark secondary nav */
 .navbar-secondary {
-    background: #111827; /* deep navy */
+    background: #111827;
     color: #fff;
     padding: .65rem 0;
 }
@@ -293,7 +291,7 @@ body {
 
 .navbar-secondary .nav-link:hover,
 .navbar-secondary .nav-link.active {
-    color: #ffc107; /* highlight like screenshot */
+    color: #ffc107; 
 }
 
 /* Cart mini */
@@ -330,5 +328,49 @@ body {
 
     .top-links {
         display: none !important;
+    }
+}
+//  Picku p button
+.btn-outline-danger {
+    border-radius: 30px;
+}
+
+/*  NOTE + DOTS */
+.pager-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: .5rem;
+    gap: .35rem;
+    margin-left: calc(90px + 16px);
+}
+
+.img-note {
+    text-align: left;
+}
+
+.pager-dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pager-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c5c6c7;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.pager-dots .dot.active {
+    background: #e10613;
+}
+
+@media (max-width: 991.98px) {
+    .pager-block {
+        margin-left: 0;
+        align-items: center;
     }
 }

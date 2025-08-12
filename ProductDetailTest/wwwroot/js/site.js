@@ -1,4 +1,4 @@
-﻿// ===== cart helpers =====
+﻿//  cart helpers 
 function getCart() {
     try { return JSON.parse(localStorage.getItem('cart')) || { count: 0, total: 0 }; }
     catch (e) { return { count: 0, total: 0 }; }
@@ -12,14 +12,14 @@ function saveCart(c) {
     renderCart(c);
 }
 
-// ===== toast helper (safe call) =====
+//  toast message
 function showToast(type, msg, opts) {
     var api = (window.$ && $.toastMessage) || (window.jQuery && jQuery.toastMessage);
     if (typeof api === 'function') api(type, msg, opts);
     else console.warn('[toast] plugin not found');
 }
 
-// ===== Gallery (unified: thumbs + dots + arrows) =====
+//Gallery (thumbs, dots ,arrows) 
 function initGallery() {
     var $hero = $('#heroImage').length ? $('#heroImage') : $('#mainImage');
     var $thumbs = $('#thumbList .thumb');
@@ -51,7 +51,7 @@ function initGallery() {
         $thumbs.removeClass('active').eq(current).addClass('active');
         $dots.removeClass('active').eq(current).addClass('active');
 
-        // keep active thumb in view (vertical list)
+        // active thumb
         var container = document.querySelector('.thumbs');
         var active = $thumbs.get(current);
         if (container && active && active.scrollIntoView) {
@@ -77,9 +77,9 @@ function initGallery() {
     show(0);
 }
 
-// ===== dom ready =====
+//  dom ready 
 $(function () {
-    // Reset cart each refresh (your original behavior)
+    // Reset cart each refresh
     localStorage.removeItem('cart');
     renderCart({ count: 0, total: 0 });
 

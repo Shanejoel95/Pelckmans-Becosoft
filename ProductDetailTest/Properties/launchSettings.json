@@ -23,7 +23,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7008;http://localhost:5077",
-      "launchUrl": "Product/Detail",
+      "launchUrl": "Product/Detail", // Added to load the details page on reload
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

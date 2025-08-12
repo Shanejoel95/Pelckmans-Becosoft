@@ -1,10 +1,5 @@
 (function ($) {
     /**
-     * $.toastMessage(type, message, options)
-     * 
-     * type: 'success' | 'error'
-     * message: string | HTML
-     * options:
      *   - duration: number (ms) default 3500 (auto-close delay)
      *   - sticky: boolean default false (if true, requires manual close)
      *   - title: string optional

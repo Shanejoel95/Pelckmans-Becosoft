@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Content\NewFolder\**" />
+    <Compile Remove="wwwroot\Content\css\**" />
     <Content Remove="Content\NewFolder\**" />
+    <Content Remove="wwwroot\Content\css\**" />
     <EmbeddedResource Remove="Content\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\Content\css\**" />
     <None Remove="Content\NewFolder\**" />
+    <None Remove="wwwroot\Content\css\**" />
   </ItemGroup>
 
   <ItemGroup>
