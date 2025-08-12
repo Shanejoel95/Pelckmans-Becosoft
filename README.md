@@ -15,13 +15,16 @@ $.toastMessage('error', 'Something went wrong.');
 ```
 3. **Options**:
 ```javascript
-$.toastMessage('success', 'Sticky toast', { sticky: true });
-$.toastMessage('error', 'Closes in 5s', { duration: 5000 });
+$.toastMessage('success', 'Order placed!', {
+  duration: 5000,
+  sticky: false,
+  title: 'Success'
+});
 ```
 4. **Events**:
 ```javascript
-$(document).on('toastShown', (e, el) => console.log('Shown:', el));
-$(document).on('toastClosed', (e, el) => console.log('Closed:', el));
+$(document).on('toastShown', (e, $el, type) => console.log('Shown:', type));
+$(document).on('toastClosed', (e, $el, type) => console.log('Closed:', type));
 ```
 
 ## Time Spent
